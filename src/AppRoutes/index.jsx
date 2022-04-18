@@ -2,11 +2,21 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./../pages/Home";
+import Checkout from "./../pages/Checkout";
+import Order from "./../pages/Order";
 
 const publicRoutes = [
   {
     path: "/",
     Component: Home,
+  },
+  {
+    path: "/checkout",
+    Component: Checkout,
+  },
+  {
+    path: "/order",
+    Component: Order,
   },
 ];
 
