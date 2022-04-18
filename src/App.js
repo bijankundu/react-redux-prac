@@ -5,6 +5,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import store from "./store";
 import AppRoutes from "./AppRoutes";
 
+import "./styles/base.scss";
+
 const App = () => {
   return (
     <Provider store={store}>
