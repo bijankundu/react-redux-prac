@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from "./cartTypes";
+import { ADD_ITEM, REMOVE_ITEM, APPLY_PROMO, CLEAR_PROMO } from "./cartTypes";
 
 const addItem = (payload = { id: 0 }) => {
   return {
@@ -14,4 +14,17 @@ const deleteItem = (itemId = 0) => {
   };
 };
 
-export { addItem, deleteItem };
+const applyPromo = (promoCode = "") => {
+  return {
+    type: APPLY_PROMO,
+    payload: promoCode,
+  };
+};
+
+const clearPromo = () => {
+  return {
+    type: CLEAR_PROMO,
+  };
+};
+
+export { addItem, deleteItem, applyPromo, clearPromo };
