@@ -1,6 +1,6 @@
 import { ADD_ITEM, REMOVE_ITEM } from "./cartTypes";
 
-const initalState = { cart: {} };
+const initalState = { cart: {}, totalQty: 0 };
 
 const cartReducer = (state = initalState, action) => {
   let itemObj = {};
@@ -21,6 +21,7 @@ const cartReducer = (state = initalState, action) => {
       return {
         ...state,
         cart: modifiedCartObj,
+        totalQty: state.totalQty + 1,
       };
 
     case REMOVE_ITEM:
@@ -35,6 +36,7 @@ const cartReducer = (state = initalState, action) => {
       return {
         ...state,
         cart: modifiedCartObj,
+        totalQty: state.totalQty - 1 <= 0 ? 0 : state.totalQty - 1,
       };
 
     default:
