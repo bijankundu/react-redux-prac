@@ -1,6 +1,6 @@
 import { ADD_ITEM, REMOVE_ITEM } from "./cartTypes";
 
-const initalState = {};
+const initalState = { cart: {} };
 
 const cartReducer = (state = initalState, action) => {
   let itemObj = {};
@@ -8,7 +8,7 @@ const cartReducer = (state = initalState, action) => {
 
   switch (action.type) {
     case ADD_ITEM:
-      if (state.cart[action.payload.id]) {
+      if (action.payload.id in state.cart) {
         itemObj = { ...state.cart[action.payload.id] };
         itemObj.quantity += 1;
       } else {
