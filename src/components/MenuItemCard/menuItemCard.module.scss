@@ -1,0 +1,101 @@
+@import "./../../styles/variables.scss";
+
+.container {
+  min-height: 8.125rem;
+  display: flex;
+  column-gap: 1rem;
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 0.3125rem;
+
+  .food-img-wrapper {
+    height: 8.125rem;
+    width: 25%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 0.3125rem;
+      object-fit: cover;
+    }
+  }
+
+  .details-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 50%;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img.food-type-icon {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+    p {
+      font-size: 0.85rem;
+      color: $gray-500;
+    }
+    .ratings-container {
+      display: flex;
+      column-gap: 0.2rem;
+
+      p.vote-count {
+        margin-left: 1rem;
+        color: $gray-300;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .price-quantity-container {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+
+    h4.price {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .quantity-container {
+      display: flex;
+      align-items: center;
+      gap: 0.3125rem;
+      border: 0.0625rem solid $gray-200;
+      padding: 0.3125rem;
+      border-radius: 0.3125rem;
+      min-width: 4rem;
+      justify-content: center;
+
+      p {
+        font-size: 0.8rem;
+        color: $secondary;
+        font-weight: 500;
+      }
+
+      p.quantity {
+        border-inline: 0.0625rem solid $gray-200;
+        padding-inline: 0.3125rem;
+      }
+
+      .quantity-update-icon {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
