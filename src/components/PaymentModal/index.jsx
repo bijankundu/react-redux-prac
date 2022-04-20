@@ -25,7 +25,7 @@ const PaymentModal = ({ isModalOpen, setIsModalOpen }) => {
     console.log(cardDetails);
     closeModal();
 
-    navigate("/order");
+    navigate("/order", { replace: true });
   };
 
   return (
@@ -39,7 +39,7 @@ const PaymentModal = ({ isModalOpen, setIsModalOpen }) => {
     >
       <header>
         <h2>Enter card details</h2>
-        <button>
+        <button onClick={closeModal}>
           <FiX />
         </button>
       </header>

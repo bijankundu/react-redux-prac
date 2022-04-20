@@ -1,0 +1,40 @@
+@import "./../../styles/variables.scss";
+
+.cart-items-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+
+  h5 {
+    width: 60%;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img.food-type-icon {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+  p,
+  div.price-container {
+    width: 15%;
+  }
+
+  p,
+  h6 {
+    text-align: right;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  div.price-container {
+    h6.discounted {
+      text-decoration: line-through;
+      color: $gray-400;
+    }
+  }
+}
