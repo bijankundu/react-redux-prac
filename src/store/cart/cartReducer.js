@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM, APPLY_PROMO, CLEAR_PROMO } from "./cartTypes";
+import { ADD_ITEM, REMOVE_ITEM, APPLY_PROMO, CLEAR_PROMO, RESET_CART } from "./cartTypes";
 
 const initalState = { cart: {}, totalQty: 0, totalAmt: 0, discountAmt: 0, promoCode: "" };
 
@@ -67,6 +67,11 @@ const cartReducer = (state = initalState, action) => {
         ...state,
         discountAmt: 0,
         promoCode: "",
+      };
+
+    case RESET_CART:
+      return {
+        ...initalState,
       };
 
     default:

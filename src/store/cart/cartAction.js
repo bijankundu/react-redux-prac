@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM, APPLY_PROMO, CLEAR_PROMO } from "./cartTypes";
+import { ADD_ITEM, REMOVE_ITEM, APPLY_PROMO, CLEAR_PROMO, RESET_CART } from "./cartTypes";
 
 const addItem = (payload = { id: 0 }) => {
   return {
@@ -27,4 +27,10 @@ const clearPromo = () => {
   };
 };
 
-export { addItem, deleteItem, applyPromo, clearPromo };
+const resetCart = () => {
+  return {
+    type: RESET_CART,
+  };
+};
+
+export { addItem, deleteItem, applyPromo, clearPromo, resetCart };
