@@ -5,6 +5,7 @@ import { FiX } from "react-icons/fi";
 import { applyPromo, clearPromo } from "./../../store/cart/cartAction";
 
 import Cart from "./../../components/Cart";
+import PaymentModal from "../../components/PaymentModal";
 
 import styles from "./checkout.module.scss";
 
@@ -18,14 +19,17 @@ const Checkout = () => {
 
   const [promoCodeInput, setPromoCodeInput] = useState("");
   const [isWrongPromo, setIsWrongPromo] = useState(false);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
 
   const handleApplyPromoCode = () => {
-    if (["VEG25", "NONVEG50"].includes(promoCodeInput.toUpperCase())) {
-      dispatch(applyPromo(promoCodeInput.toUpperCase()));
-    } else {
-      setIsWrongPromo(true);
+    if (promoCodeInput !== "") {
+      if (["VEG25", "NONVEG50"].includes(promoCodeInput.toUpperCase())) {
+        dispatch(applyPromo(promoCodeInput.toUpperCase()));
+      } else {
+        setIsWrongPromo(true);
+      }
+      setPromoCodeInput("");
     }
-    setPromoCodeInput("");
   };
 
   return (
@@ -75,8 +79,11 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
-            <button className={styles["pay-now-btn"]}>Pay now</button>
+            <button className={styles["pay-now-btn"]} onClick={() => setIsPaymentModalOpen(true)}>
+              Pay now
+            </button>
           </div>
+          <PaymentModal isModalOpen={isPaymentModalOpen} setIsModalOpen={setIsPaymentModalOpen} />
         </div>
       )}
     </>
