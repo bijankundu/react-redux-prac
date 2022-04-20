@@ -17,10 +17,18 @@ const CartItemsRow = ({ quantity, name, food_type, price }) => {
       </h5>
       <p>{quantity}</p>
       <div className={styles["price-container"]}>
-        {food_type === "nonveg" && promoCode.toUpperCase() === "NONVEG50" && (
-          <h6 className={styles["discounted"]}>{`₹${price}`}</h6>
+        {food_type === "nonveg" ? (
+          promoCode.toUpperCase() === "NONVEG50" ? (
+            <>
+              <h6 className={styles["discounted"]}>{`₹${price}`}</h6>
+              <h6>{`₹${Number(price) / 2}`}</h6>
+            </>
+          ) : (
+            <h6>{`₹${price}`}</h6>
+          )
+        ) : (
+          <h6>{`₹${price}`}</h6>
         )}
-        <h6>{`₹${Number(price) / 2}`}</h6>
       </div>
     </div>
   );
